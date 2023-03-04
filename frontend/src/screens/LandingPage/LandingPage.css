@@ -1,0 +1,60 @@
+.main {
+    min-height: 93vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../../../public/Images/landing-image.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.landing-heading {
+    text-align: center;
+    width: 100%;
+}
+
+.landing-heading h1 {
+    font-size: 5rem;
+}
+
+.landing-heading p {
+    font-size: 2rem;
+    padding-top: 12px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-container button {
+    margin-top: 10px;
+    width: 200px;
+    height: 55px;
+}
+
+.button-container button:active {
+    background-color: rgb(5, 40, 40) !important;
+}
+
+
+
+
+
+
+
+@media (width<500px) {
+    .landing-heading h1 {
+        font-size: 4rem;
+    }
+    
+    .landing-heading p {
+        font-size: 1rem;
+        padding-top: 8px;
+    }
+
+    .button-container button {
+        margin-top: 10px;
+        width: 150px;
+        height: 45px;
+    }
+}
