@@ -1,11 +1,13 @@
 import React from 'react'
 import {Navbar, Nav, Container, NavDropdown, Form} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
 const Header = () => {
   return (
-    <Navbar bg="primary" expand="lg" variant='dark'>
+    <Navbar className='header-container' bg="primary" expand="lg" variant='dark'>
       <Container>
-        <Navbar.Brand className='fw-bolder navbar-logo' href="/">Note Buddy</Navbar.Brand>
+        <Navbar.Brand className='fw-bolder navbar-logo'><Link className='link-default-style-remove' to={"/"}>Note Buddy</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           
@@ -21,11 +23,11 @@ const Header = () => {
           </Nav>
 
           <Nav>
-            <Nav.Link href="#action1">My Notes</Nav.Link>
-            <NavDropdown title="Joseph Joyal" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action1">My Profile</NavDropdown.Item>
+            <Nav.Link as={Link} className='link-default-style-remove header-item' to={"/mynotes"}> My Notes</Nav.Link>
+            <NavDropdown className='header-item' title="Joseph Joyal" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action1" className='header-item'>My Profile</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action2">Log Out</NavDropdown.Item>
+              <NavDropdown.Item href="#action2" className='header-item'>Log Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>         
                 

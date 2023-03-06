@@ -1,0 +1,53 @@
+.mynotes-page {
+    min-height: 93vh;
+}
+
+.card-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.card-header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+.card-header button{
+    margin-left: 10px;
+}
+
+.card-title {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+
+.card-body {
+    color: black;
+    font-size: 15px;
+}
+
+.card-footer {
+    font-size: 15px;
+}
+
+@media (width<400px) {
+    .card-title {
+        max-width: 195px;
+        font-size: 15px;
+    }
+
+    .card-body {
+        font-size: 13px;
+    }
+    .card-footer {
+        font-size: 13px;
+    }
+}

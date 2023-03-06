@@ -30,6 +30,7 @@
     margin-top: 10px;
     width: 200px;
     height: 55px;
+    letter-spacing: 1.5px;
 }
 
 .button-container button:active {
@@ -44,7 +45,7 @@
 
 @media (width<500px) {
     .landing-heading h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     
     .landing-heading p {
@@ -56,5 +57,6 @@
         margin-top: 10px;
         width: 150px;
         height: 45px;
+        letter-spacing: 2px;
     }
 }

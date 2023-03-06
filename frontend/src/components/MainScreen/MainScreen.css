@@ -1,0 +1,27 @@
+.main-background {
+    min-height: 93vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.page {
+    width: 100%;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: bolder;
+    padding-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (width<500px) {
+    .heading {
+        font-size:1.25rem;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}
