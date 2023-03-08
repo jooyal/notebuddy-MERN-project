@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import MainScreen from '../../components/MainScreen/MainScreen'
 import './MyNotes.css'
-import { Accordion, AccordionContext, Badge, Button, Card } from 'react-bootstrap'
+import { Accordion, Badge, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import CardHeader from 'react-bootstrap/esm/CardHeader'
-// import notes from '../../sampledata'
 import axios from 'axios'
+import Loading from '../../components/Loading'
 
 const MyNotes = () => {
   
+  const [loading, setLoading] = useState(false)
   const [notes, setNotes] = useState([]);
   const fetchNotes = async()=>{
+    setLoading(true)
     const notesObj = await axios.get('/api/notes');
     setNotes(notesObj.data);
+    setLoading(false)
   }
+
   useEffect(() => {
     fetchNotes()
   }, [])
+
 
   const deleteHandler = (id)=>{
     if(window.confirm('Are you sure you want to delete the note?')){
@@ -28,7 +33,7 @@ const MyNotes = () => {
       <Link to={'createnote'}>
         <Button className='btn-success mb-2' >New Note +</Button>
       </Link>
-
+      {loading && <Loading/>}
       {notes.map((note,index)=>{
         return(
         <Card key={index} className='my-2'>

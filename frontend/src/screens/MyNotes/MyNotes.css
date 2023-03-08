@@ -38,9 +38,9 @@
     font-size: 15px;
 }
 
-@media (width<400px) {
+@media (width<500px) {
     .card-title {
-        max-width: 195px;
+        max-width: 150px;
         font-size: 15px;
     }
 
