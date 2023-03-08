@@ -1,0 +1,4 @@
+.register-required-field-label::after{
+    content: "*";
+    color: red;
+}

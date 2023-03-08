@@ -2,25 +2,34 @@ import React, { useEffect, useState } from 'react'
 import MainScreen from '../../components/MainScreen/MainScreen'
 import './MyNotes.css'
 import { Accordion, Badge, Button, Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import CardHeader from 'react-bootstrap/esm/CardHeader'
 import axios from 'axios'
 import Loading from '../../components/Loading'
 
 const MyNotes = () => {
   
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const [notes, setNotes] = useState([]);
-  const fetchNotes = async()=>{
+  const fetchNotes = ()=>{
     setLoading(true)
-    const notesObj = await axios.get('/api/notes');
-    setNotes(notesObj.data);
-    setLoading(false)
+    axios.get('/api/notes').then((notesObj)=>{
+      setNotes(notesObj.data);
+      setLoading(false)
+    })
   }
 
   useEffect(() => {
     fetchNotes()
   }, [])
+
+  useEffect(() => {
+    const userInfo = localStorage.getItem("userInfo");
+    if(!userInfo){
+      navigate('/')
+    }
+  }, [navigate]);
 
 
   const deleteHandler = (id)=>{

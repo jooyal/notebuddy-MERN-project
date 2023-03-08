@@ -7,6 +7,7 @@ import Loading from "../../components/Loading";
 import MainScreen from "../../components/MainScreen/MainScreen";
 
 const LoginScreen = () => {
+  const navigate = useNavigate()
   const submitHandler = async (e) => {
     setError(false);
     e.preventDefault();
@@ -25,16 +26,17 @@ const LoginScreen = () => {
         },
         config
       );
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
+      navigate('/mynotes')
     } catch (error) {
       console.error(error.response.data);
       setError(error.response.data.message);
       setLoading(false);
     }
   };
-  const navigate = useNavigate()
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
